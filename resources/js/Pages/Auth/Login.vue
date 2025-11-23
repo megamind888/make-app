@@ -1,22 +1,15 @@
 <script setup>
-import { Head, Link } from '@inertiajs/vue3';
+import { Head, Link, useForm } from '@inertiajs/vue3';  
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { ref } from 'vue';
 
-defineProps({
-    canResetPassword: Boolean,
-    status: String,
-});
-
-const form = ref({
+const form = useForm({     
     email: '',
     password: '',
     remember: false,
 });
 
 const submit = () => {
-    // Laravel Breeze handles this automatically via Inertia
-    Inertia.post('/login', form.value);
+    form.post(route('login'));
 };
 </script>
 
@@ -70,6 +63,10 @@ const submit = () => {
                                 Forgot your password?
                             </Link>
                         </div>
+                    </div>
+
+                    <div v-if="form.errors.any()" class="mb-4 text-sm text-red-600">
+                        <div v-for="error in form.errors">{{ error }}</div>
                     </div>
 
                     <div>

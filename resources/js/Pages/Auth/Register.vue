@@ -1,9 +1,8 @@
 <script setup>
 import { Head, Link } from '@inertiajs/vue3';
 import ApplicationLogo from '@/Components/ApplicationLogo.vue';
-import { ref } from 'vue';
 
-const form = ref({
+const form = useForm({
     name: '',
     email: '',
     password: '',
@@ -11,7 +10,7 @@ const form = ref({
 });
 
 const submit = () => {
-    Inertia.post('/register', form.value);
+    form.post(route('register'));
 };
 </script>
 
@@ -53,6 +52,10 @@ const submit = () => {
                         <label for="password_confirmation" class="block text-sm font-medium text-gray-700">Confirm Password</label>
                         <input id="password_confirmation" v-model="form.password_confirmation" type="password" required autocomplete="new-password"
                                class="mt-1 block w-full px-3 py-2 border border-gray-300 rounded-md shadow-sm focus:outline-none focus:ring-green-500 focus:border-green-500" />
+                    </div>
+                    
+                    <div v-if="form.errors.any()" class="mb-4 text-sm text-red-600">
+                        <div v-for="error in form.errors">{{ error }}</div>
                     </div>
 
                     <div>
