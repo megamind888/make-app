@@ -2,7 +2,7 @@
 </script>
 
 <template>
-  <div class="text-3xl font-black tracking-tight">
-    <span class="text-make-orange">Make</span><span class="text-make-gray">.ooo</span>
-  </div>
+    <div class="text-6xl font-black tracking-tighter">
+        <span class="text-green-500">Make.ooo</span>
+    </div>
 </template>
