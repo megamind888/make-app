@@ -31,8 +31,10 @@ const submit = () => {
     <GuestLayout>
         <Head title="Log in" />
 
-        <div v-if="status" class="mb-4 text-sm font-medium text-green-600">
-            {{ status }}
+        <div class="mb-8 text-center">
+            <ApplicationLogo class="w-32 h-32 mx-auto text-green-500" />
+            <h2 class="mt-6 text-4xl font-bold text-gray-900">Welcome back</h2>
+            <p class="mt-2 text-sm text-gray-600">Log in to your maker account</p>
         </div>
 
         <form @submit.prevent="submit">

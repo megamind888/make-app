@@ -9,10 +9,12 @@ module.exports = {
     extend: {
       colors: {
         make: {
-          orange: '#FF6B35',
-          gray: '#1F2937',
-          light: '#F3F4F6',
-          blue: '#3B82F6',
+          green: '#00ff00',
+          'green-dark': '#00cc00',
+          orange: '#ff6b35',
+          blue: '#3b82f6',
+          purple: '#8b5cf6',
+          pink: '#ec4899',
         }
       },
     },
