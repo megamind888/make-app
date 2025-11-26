@@ -5,7 +5,7 @@ import ApplicationLogo from '@/Components/ApplicationLogo.vue';
 const form = useForm({
     email: '',
     password: '',
-    remember: false,
+    remember: false, 
 });
 
 const submit = () => {
